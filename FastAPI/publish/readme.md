@@ -1,0 +1,1 @@
+MQTT发布端，向home assistant提供数据，数据来自controller
