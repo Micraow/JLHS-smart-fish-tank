@@ -1,8 +1,8 @@
 import sys
 sys.path.append("..")
 
-from controller.act import *
-import main
+from FastAPI_back.controller.act import *
+import FastAPI_back.main
 from fastapi_mqtt.fastmqtt import FastMQTT
 
 from fastapi_mqtt.config import MQTTConfig
