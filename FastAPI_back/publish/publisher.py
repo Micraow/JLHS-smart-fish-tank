@@ -21,7 +21,7 @@ async def oxygen(data):
 
     return {"result": True,"message":"Published" }
 
-async def temp(data):
+async def quality(data):
     mqtt.publish("/HA-quality", data) #publishing mqtt topic
 
     return {"result": True,"message":"Published" }
