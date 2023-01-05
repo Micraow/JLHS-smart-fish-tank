@@ -18,7 +18,8 @@
 摄像头可被电机带动转向鱼缸外，作为家庭监控，如果时间允许，我们会尝试加入人脸识别或体态识别的功能做到安防警报。
 
 ## 架构
-基于树莓派，使用WiringPi控制gpio与传感器以及电机，后端使用fastapi，通过MQTT接入home assistant系统，并通过内网穿透，实现远程控制。
+基于树莓派，使用WiringPi控制gpio与传感器以及电机，后端使用~~fastapi~~paho-mqtt，通过MQTT接入home assistant系统，并通过内网穿透，实现远程控制。
+本地安装mosquitto 搭建broker.
 
 ## 开发人员
 
