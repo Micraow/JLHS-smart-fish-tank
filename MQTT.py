@@ -5,7 +5,7 @@ MQTT客户端主体，与HomeAssistant交互，并负责调用Hardware的方法
 import time
 import paho.mqtt.client as mqtt
 from Hardware import temp, oxygen, quality, motor
-
+from Hardware import faketemp
 
 # mosquitto -p 6000
 # 首先启用broker，监听6000端口
@@ -28,14 +28,15 @@ def on_publish():
 
     """
 
-    mqttClient.publish("/temp", temp.get())
+    #mqttClient.publish("/temp", temp.get())
+    mqttClient.publish("/temp", faketemp.get())
     mqttClient.publish("/oxygen", oxygen.get())
     mqttClient.publish("/quality", quality.get())
 
 # 消息处理函数
 
 
-def on_message_come():
+def on_message_come(*args):
     """
     topic: 目前的功能只有投喂(topic=feed)，摄像头转动再说吧
     payload: 投喂ID，防止多次投喂
