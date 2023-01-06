@@ -1,0 +1,29 @@
+
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+
+mqtt:
+  sensor:
+    - name: "温度"
+      state_topic: "/temp"
+    - name: "含氧量"
+      state_topic: "/oxygen"
+    - name: "水质"
+      state_topic: "/quality"
+
+  button:
+    - command_topic: "/HA-feed"
+      name: "喂食"
